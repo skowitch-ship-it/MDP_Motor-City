@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mobile Food Ordering — MotorCity Casino Hotel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/motor-city.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Top Nav — Figma node 204:39463 (Components 212:478) -->
+  <header class="mc-top-nav" data-figma-node="204:39463">
+    <button type="button" class="btn btn-link p-0 border-0 bg-transparent text-white" aria-label="Menu">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 12h24v2H8v-2zm0 7h24v2H8v-2zm0 7h24v2H8v-2z" fill="currentColor"/>
+      </svg>
+    </button>
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <span class="mc-logo-text text-white fw-bold">MotorCity Casino Hotel</span>
+    </a>
+    <a href="account.html" class="d-flex flex-column align-items-center text-decoration-none">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
+      <span class="mc-login-label small">Login</span>
+    </a>
+  </header>
+
+  <main class="mc-container py-4">
+    <h1 class="mc-section-title">Order Food</h1>
+    <p class="text-mc-muted text-center mb-4">Pick a venue, then tap Order Now.</p>
+
+    <!-- Six venues — aligned with reference prototype & SOW -->
+    <section class="venue-list" aria-label="Food venues">
+      <article class="mc-venue-card" data-venue-id="diner" data-figma-venue-card>
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <span class="mc-badge-open small me-2">Open</span>
+            <h2 class="h5 mb-1">Cozy Retro Diner</h2>
+            <p class="mb-1 small">Cozy retro diner serving comfort food.</p>
+            <p class="mc-hours mb-2">Daily 5PM–10PM</p>
+          </div>
+        </div>
+        <a href="venue.html?id=diner" class="btn btn-mc-primary w-100">Order Now</a>
+      </article>
+
+      <article class="mc-venue-card" data-venue-id="burgers">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <span class="mc-badge-open small me-2">Open</span>
+            <h2 class="h5 mb-1">Grand River Deli & Burgers</h2>
+            <p class="mb-1 small">Fresh burgers, sandwiches, salads, and more.</p>
+            <p class="mc-hours mb-2">Daily 11AM–4AM</p>
+          </div>
+        </div>
+        <a href="venue.html?id=burgers" class="btn btn-mc-primary w-100">Order Now</a>
+      </article>
+
+      <article class="mc-venue-card" data-venue-id="wok">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <span class="mc-badge-closed small me-2">Closed</span>
+            <h2 class="h5 mb-1">Wok & Bowl</h2>
+            <p class="mb-1 small">Wok-fired dishes, fresh and fast.</p>
+            <p class="mc-hours mb-2">Thu & Sun 5PM–11PM · Fri & Sat 5PM–1AM</p>
+          </div>
+        </div>
+        <button type="button" class="btn btn-mc-primary w-100" disabled>Order Now</button>
+      </article>
+
+      <article class="mc-venue-card" data-venue-id="pizza">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <span class="mc-badge-open small me-2">Open</span>
+            <h2 class="h5 mb-1">Pizza Place</h2>
+            <p class="mb-1 small">Pizza. Pizza.</p>
+            <p class="mc-hours mb-2">Daily 11AM–11PM</p>
+          </div>
+        </div>
+        <a href="venue.html?id=pizza" class="btn btn-mc-primary w-100">Order Now</a>
+      </article>
+
+      <article class="mc-venue-card" data-venue-id="pastries">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <span class="mc-badge-open small me-2">Open</span>
+            <h2 class="h5 mb-1">Pastries & Starbucks</h2>
+            <p class="mb-1 small">Fresh pastries, cakes, and Starbucks coffee.</p>
+            <p class="mc-hours mb-2">Mon–Wed 4AM–7PM · Thu–Sun 4AM–11PM</p>
+          </div>
+        </div>
+        <a href="venue.html?id=pastries" class="btn btn-mc-primary w-100">Order Now</a>
+      </article>
+
+      <article class="mc-venue-card" data-venue-id="steakhouse">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <span class="mc-badge-open small me-2">Open</span>
+            <h2 class="h5 mb-1">Steakhouse</h2>
+            <p class="mb-1 small">Modern steakhouse with timeless flavor.</p>
+            <p class="mc-hours mb-2">Wed–Sun 5PM–12AM</p>
+          </div>
+        </div>
+        <a href="venue.html?id=steakhouse" class="btn btn-mc-primary w-100">Order Now</a>
+      </article>
+    </section>
+  </main>
+
+  <!-- Bottom nav — persistent (Section 6.9) -->
+  <nav class="mc-bottom-nav border-top border-secondary py-2 bg-dark fixed-bottom" aria-label="Main">
+    <div class="d-flex justify-content-around">
+      <a href="index.html" class="text-white text-decoration-none small d-flex flex-column align-items-center"><span>Home</span></a>
+      <a href="cart.html" class="text-white text-decoration-none small d-flex flex-column align-items-center">
+        <span>Cart</span>
+        <span class="badge bg-mc-teal rounded-pill" id="cart-count">0</span>
+      </a>
+      <a href="account.html" class="text-white text-decoration-none small d-flex flex-column align-items-center"><span>Account</span></a>
+    </div>
+  </nav>
+
+  <script src="https://code.jquery.com/jquery-3.8.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

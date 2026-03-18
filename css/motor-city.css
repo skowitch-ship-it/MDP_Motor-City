@@ -1,0 +1,225 @@
+/**
+ * Motor City Casino Hotel — Mobile Food Ordering
+ * Design tokens & UI aligned with Figma (nodes 140:39, 212:478) and brand guidelines.
+ * Figma file: https://www.figma.com/design/FVEwdLiKvgmZvw23MU4CKq/Motor-City-Casino-Design
+ */
+
+:root {
+  /* Brand palette (Section 4.3) */
+  --mc-teal: #00728F;
+  --mc-navy: #002D56;
+  --mc-green: #387C2B;
+  --mc-orange: #E37F1C;
+  --mc-red: #B32025;
+  --mc-magenta: #EC098D;
+  --mc-yellow: #F1CB1C;
+  --mc-blue: #005596;
+  --mc-purple: #54075B;
+  --mc-gray: #605270;
+  --mc-black: #141006;
+  --mc-lime: #C1CD00;
+
+  /* UI roles (dark-first, Section 5.2) */
+  --mc-bg-primary: var(--mc-black);
+  --mc-bg-card: #1f1f1f;
+  --mc-bg-elevated: #2a2a2a;
+  --mc-text-primary: #f5f5f5;
+  --mc-text-secondary: #b0b0b0;
+  --mc-text-muted: var(--mc-gray);
+  --mc-border: rgba(255, 255, 255, 0.12);
+  --mc-border-card: #cfcfd1;
+
+  /* CTAs */
+  --mc-cta-primary: var(--mc-teal);
+  --mc-cta-primary-hover: #0088a8;
+  --mc-success: var(--mc-green);
+  --mc-error: var(--mc-red);
+
+  /* Typography: Akzidenz Grotesk / Verdana fallback (Section 4.2, 5.3) */
+  --mc-font-condensed: "Akzidenz-Grotesk Pro Condensed", "Verdana", sans-serif;
+  --mc-font-body: "Akzidenz-Grotesk Pro", "Verdana", sans-serif;
+  --mc-heading-size: 1.75rem;
+  --mc-heading-tracking: 1.6px;
+  --mc-body-size: 1rem;
+  --mc-utility-size: 0.875rem;
+
+  /* Spacing & layout (Section 5.4) */
+  --mc-nav-height: 100px;
+  --mc-container-px: 20px;
+  --mc-card-radius: 16px;
+  --mc-card-radius-sm: 12px;
+}
+
+/* Base */
+body {
+  font-family: var(--mc-font-body);
+  font-size: var(--mc-body-size);
+  background-color: var(--mc-bg-primary);
+  color: var(--mc-text-primary);
+  min-height: 100vh;
+}
+
+/* Top Nav — aligns with Figma Top Nav (204:39463) */
+.mc-top-nav {
+  background-color: var(--mc-bg-card);
+  min-height: var(--mc-nav-height);
+  padding: 0 var(--mc-container-px) 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-radius: 0 0 var(--mc-card-radius-sm) var(--mc-card-radius-sm);
+}
+.mc-top-nav .navbar-brand,
+.mc-top-nav .mc-logo-wrap {
+  max-height: 48px;
+}
+.mc-top-nav .mc-logo-wrap img {
+  height: 48px;
+  width: auto;
+  max-width: 183px;
+}
+.mc-top-nav .btn-link,
+.mc-top-nav .nav-link {
+  color: var(--mc-text-primary);
+  font-family: var(--mc-font-condensed);
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.mc-top-nav .mc-login-label {
+  font-family: var(--mc-font-condensed);
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+/* Venue banner (Figma GRDBLogo area 205:40309 — hero per venue) */
+.mc-venue-banner {
+  min-height: 93px;
+  background-color: var(--mc-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.mc-venue-banner.venue-deli { background-color: #d28e00; }
+.mc-venue-banner h1 {
+  font-family: var(--mc-font-condensed);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 700;
+  color: var(--mc-black);
+  margin: 0;
+  text-align: center;
+}
+
+/* Menu section title (Figma "Menu" on 140:39) */
+.mc-section-title {
+  font-family: var(--mc-font-condensed);
+  font-size: var(--mc-heading-size);
+  font-weight: 700;
+  letter-spacing: var(--mc-heading-tracking);
+  color: var(--mc-text-primary);
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Food category cards (Figma 205:40308) */
+.mc-category-card {
+  background: white;
+  border: 1px solid var(--mc-border-card);
+  border-radius: var(--mc-card-radius);
+  overflow: hidden;
+  max-width: 302px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mc-category-card .card-img-top {
+  height: 181px;
+  object-fit: cover;
+  border-radius: var(--mc-card-radius) var(--mc-card-radius) 0 0;
+}
+.mc-category-card .card-body {
+  padding: 8px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+}
+.mc-category-card .card-title {
+  font-family: var(--mc-font-condensed);
+  font-size: 32px;
+  letter-spacing: 1.6px;
+  color: #1f1f1f;
+  margin: 0;
+  text-align: center;
+}
+
+/* Venue cards on home (venue list) */
+.mc-venue-card {
+  background: var(--mc-bg-card);
+  border: 1px solid var(--mc-border);
+  border-radius: var(--mc-card-radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.mc-venue-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.mc-venue-card .mc-hours { color: var(--mc-text-secondary); font-size: var(--mc-utility-size); }
+.mc-venue-card.mc-closed .mc-order-btn { pointer-events: none; opacity: 0.5; }
+.mc-venue-card .mc-badge-open { color: var(--mc-success); }
+.mc-venue-card .mc-badge-closed { color: var(--mc-text-muted); }
+
+/* Buttons (Section 5.6) */
+.btn-mc-primary {
+  background-color: var(--mc-cta-primary);
+  border-color: var(--mc-cta-primary);
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+}
+.btn-mc-primary:hover {
+  background-color: var(--mc-cta-primary-hover);
+  border-color: var(--mc-cta-primary-hover);
+  color: white;
+}
+.btn-mc-secondary {
+  background-color: transparent;
+  border: 1px solid var(--mc-border);
+  color: var(--mc-text-primary);
+}
+.btn-mc-secondary:hover {
+  background-color: var(--mc-bg-elevated);
+  color: var(--mc-text-primary);
+  border-color: var(--mc-border);
+}
+
+/* Cart & checkout */
+.mc-cart-item { border-bottom: 1px solid var(--mc-border); padding: 0.75rem 0; }
+.mc-cart-footer { border-top: 1px solid var(--mc-border); padding-top: 1rem; margin-top: 1rem; }
+.mc-split-tender .form-check-label { cursor: pointer; }
+.mc-payment-breakdown { background: var(--mc-bg-card); border-radius: var(--mc-card-radius-sm); padding: 1rem; }
+
+/* Confirmation (FR-04) */
+.mc-confirm-id { font-family: monospace; font-size: 1.1rem; color: var(--mc-lime); }
+.mc-confirm-pickup { color: var(--mc-text-secondary); }
+
+/* Error states (NR-01) */
+.mc-error-panel {
+  background: rgba(179, 32, 37, 0.15);
+  border: 1px solid var(--mc-error);
+  border-radius: var(--mc-card-radius-sm);
+  padding: 1rem;
+  color: var(--mc-text-primary);
+}
+.mc-error-panel .mc-error-actions { margin-top: 1rem; }
+
+/* Utility */
+.mc-container { padding-left: var(--mc-container-px); padding-right: var(--mc-container-px); }
+.text-mc-muted { color: var(--mc-text-muted); }
+.text-mc-success { color: var(--mc-success); }
+.text-mc-teal { color: var(--mc-teal); }
+.bg-mc-teal { background-color: var(--mc-teal); }
+.mc-bottom-nav .badge { font-size: 0.7rem; }
+/* Prevent content under fixed bottom nav */
+body { padding-bottom: 70px; }
